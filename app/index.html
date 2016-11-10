@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="777977494915-vf1p1lten4orfnr0t3rjq4juhqsft1le.apps.googleusercontent.com">
     <title>pedir info entrevista familias</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -29,6 +29,7 @@
       <div class="col-xs-12">
         <h1>Información de alumnos para informar a familias</h1>
         <p><div class="g-signin2" data-onsuccess="onSignIn"></div></p>
+        <p><a href="#" onclick="signOut();">Sign out</a></p>
       </div>
 
 
@@ -73,5 +74,26 @@
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+        // Mostrar bot´on desconectar
+        // Mostrar btn de solicitar info
+        // Mostrar btn de rellenar solicitudes de info
+        // mostrar btn de historicos
+
+      }
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+        //Ocultar btn descoctar
+      }
+    </script>
   </body>
 </html>
