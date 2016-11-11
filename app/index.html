@@ -21,6 +21,43 @@
     
   </head>
   <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
     <div class="container">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -28,16 +65,24 @@
     
       <div class="col-xs-12">
         <h1>Información de alumnos para informar a familias</h1>
-        <p><div class="g-signin2" data-onsuccess="onSignIn"></div></p>
-        <p><a href="#" onclick="signOut();">Sign out</a></p>
+        <p id="btnLogIn"><div class="g-signin2" data-onsuccess="onSignIn"></div></p>
+        <p id="btnLogOut" style="display: none"><a href="#" onclick="signOut();">Sign out</a></p>
       </div>
 
-
-      <div class="footer">
-        <p>@Pablo Ruiz Soria</p>
+      <div class="col-xs-12" id="divMenu" style="display: none">
+        <h2>Opciones</h2>
+        <p><button class="btn btn-default" type="button">Pedir informaci´on de alumno</button></p>
+        <p><button class="btn btn-default" type="button">Rellenar informaci´on que nos han solicitado</button></p>
+        <p><button class="btn btn-default" type="button">Hist´orico</button></p>
       </div>
     </div>
-</div>
+
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Pablo Ruiz Soria</p>
+      </div>
+    </footer>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -82,9 +127,9 @@
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail());
         // Mostrar bot´on desconectar
-        // Mostrar btn de solicitar info
-        // Mostrar btn de rellenar solicitudes de info
-        // mostrar btn de historicos
+        document.getElementById('btnLogOut').style.display = 'block';
+        // Mostrar capa de opciones
+        document.getElementById('divMenu').style.display = 'block';
 
       }
       function signOut() {
@@ -93,6 +138,9 @@
           console.log('User signed out.');
         });
         //Ocultar btn descoctar
+        document.getElementById('btnLogOut').style.display = 'none';
+        // Ocultar capa de opciones
+        document.getElementById('divMenu').style.display = 'none';
       }
     </script>
   </body>
