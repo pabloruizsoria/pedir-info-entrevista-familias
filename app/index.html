@@ -38,10 +38,13 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#" id="btnHome">Inicio</a></li>
+              <li><a href="#" id="btnHome">Inicio</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+              <li>
+                <a href="#" id="btnLogIn" class="g-signin2" data-onsuccess="onSignIn"></a>
+                <a href="#" onclick="signOut();" id="btnLogOut" style="display: none" >Sign out</a>
+                </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -50,8 +53,7 @@
 
         <div class="col-xs-12">
           <h1>Información de alumnos para informar a familias</h1>
-          <p id="btnLogIn"><div class="g-signin2" data-onsuccess="onSignIn"></div></p>
-          <p id="btnLogOut" style="display: none"><a href="#" onclick="signOut();">Sign out</a></p>
+          <p>Explicaci´on</p>
         </div>
 
         <div class="col-xs-12" id="divMenu" style="display: none">
@@ -223,6 +225,7 @@
         console.log('Email: ' + profile.getEmail());
         // Mostrar bot´on desconectar
         document.getElementById('btnLogOut').style.display = 'block';
+        document.getElementById('btnLogIn').style.display = 'none';
         //Oculto capas de acciones        
         $('#divRellenarInfo').hide();
         $('#divPedirInfo').hide();
@@ -237,6 +240,7 @@
         });
         //Ocultar btn descoctar
         document.getElementById('btnLogOut').style.display = 'none';
+        document.getElementById('btnLogIn').style.display = 'block';
         // Ocultar capas de acciones
         $('#divRellenarInfo').hide();
         $('#divPedirInfo').hide();
