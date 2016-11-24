@@ -1,229 +1,236 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-signin-client_id" content="777977494915-vf1p1lten4orfnr0t3rjq4juhqsft1le.apps.googleusercontent.com">
-  <title>pedir info entrevista familias</title>
-
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <!-- build:css styles/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/chosen/chosen.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
-
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="777977494915-vf1p1lten4orfnr0t3rjq4juhqsft1le.apps.googleusercontent.com">
+    <title>pedir info entrevista familias</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/chosen/chosen.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 </head>
+
 <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-      <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Pedir info</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="#" id="btnHome">Inicio</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="#" id="btnLogIn" class="g-signin2" data-onsuccess="onSignIn"></a>
-                <a href="#" onclick="signOut();" id="btnLogOut" style="display: none" >Sign out</a>
-                </li>
-            </ul>
-          </div><!--/.nav-collapse -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Pedir info</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" id="btnHome">Inicio</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" id="btnLogIn" class="g-signin2" data-onsuccess="onSignIn"></a>
+                        <a href="#" onclick="signOut();" id="btnLogOut" style="display: none">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-      </nav>
-      <div class="container">
-
-        <div class="col-xs-12">
-          <h1>Información de alumnos para informar a familias</h1>
-          <p>Explicaci´on</p>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Información de alumnos para informar a familias</h1>
+                <p>Explicación</p>
+            </div>
         </div>
-
-        <div class="col-xs-12" id="divMenu" style="display: none">
-          <h2>Opciones</h2>
-          <p>
-          <button id="btnPedirInfo" class="btn btn-default col-xs-6 col-xs-offset-3" type="button">
-              <span class="glyphicon glyphicon-earphone"></span> Pedir informaci´on de alumno</button>
-            </p>
-            <p>
-              <button id="btnRellenarInfo" class="btn btn-default col-xs-6 col-xs-offset-3" type="button"><span class="glyphicon glyphicon-pencil"></span> Rellenar informaci´on que nos han solicitado</button>
-            </p>
-            <p>
-              <button id="btnHistorico" class="btn btn-default col-xs-6 col-xs-offset-3" type="button"><span class="glyphicon glyphicon-search"></span> Hist´orico</button>
-            </p>
-          </div>
-
-          <div class="col-xs-12" id="divPedirInfo" style="display: none">
-            <h2>Solicitar informci´on</h2>
+        <div class="row">
+            <div class="col-xs-12" id="divMenu" style="display: none">
+                <h2>Opciones</h2>
+                <p class="row">
+                    <button id="btnPedirInfo" class="btn btn-default col-xs-6 col-xs-offset-3" type="button">
+                        <span class="glyphicon glyphicon-earphone"></span> Pedir información de alumno
+                    </button>
+                </p>
+                <p class="row">
+                    <button id="btnRellenarInfo" class="btn btn-default col-xs-6 col-xs-offset-3" type="button">
+                        <span class="glyphicon glyphicon-pencil"></span> Rellenar información que nos han solicitado
+                    </button>
+                </p>
+                <p class="row">
+                    <button id="btnHistorico" class="btn btn-default col-xs-6 col-xs-offset-3" type="button">
+                        <span class="glyphicon glyphicon-search"></span> Histórico
+                    </button>
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-12" id="divPedirInfo" style="display: none">
+            <h2>Solicitar informción</h2>
             <form>
-              <div class="form-group">
-                <label class="control-label" for="nombreAlumno">Nombre del alumno/a:</label>
-                <div>
-                  <input type="text" class="form-control" id="nombreAlumno" placeholder="Nombre del alumno/a"/>
+                <div class="form-group">
+                    <label class="control-label" for="nombreAlumno">Nombre del alumno/a:</label>
+                    <div>
+                        <input type="text" class="form-control" id="nombreAlumno" placeholder="Nombre del alumno/a" />
+                    </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="solicitados">A quien pides informaci´on:</label>
-                <div>
-                  <select name="solicitados" id="solicitados">
-                    <option value="1ESOA">1º de ESO grupo A</option>
-                    <option value="1ESOB">1º de ESO grupo B</option>
-                    <option value="1ESOC">1º de ESO grupo C</option>
-                    <option value="1ESOD">1º de ESO grupo D</option>
-                    <option value="2ESOA">2º de ESO grupo A</option>
-                    <option value="2ESOB">2º de ESO grupo B</option>
-                    <option value="2ESOC">2º de ESO grupo C</option>
-                    <option value="2ESOD">2º de ESO grupo D</option>
-                    <option value="3ESOA">3º de ESO grupo A</option>
-                    <option value="3ESOB">3º de ESO grupo B</option>
-                    <option value="3ESOC">3º de ESO grupo C</option>
-                    <option value="3ESOD">3º de ESO grupo D</option>
-                    <option value="4ESOA">4º de ESO grupo A</option>
-                    <option value="4ESOB">4º de ESO grupo B</option>
-                    <option value="4ESOC">4º de ESO grupo C</option>
-                    <option value="4ESOD">4º de ESO grupo D</option>
-                    <option value="1FPB">1º de FPB</option>
-                    <option value="2FPB">2º de FPB</option>
-                  </select>
+                <div class="form-group">
+                    <label class="control-label" for="solicitados">A quien pides información:</label>
+                    <div>
+                        <select name="solicitados" id="solicitados">
+                            <option value="1ESOA">1º de ESO grupo A</option>
+                            <option value="1ESOB">1º de ESO grupo B</option>
+                            <option value="1ESOC">1º de ESO grupo C</option>
+                            <option value="1ESOD">1º de ESO grupo D</option>
+                            <option value="2ESOA">2º de ESO grupo A</option>
+                            <option value="2ESOB">2º de ESO grupo B</option>
+                            <option value="2ESOC">2º de ESO grupo C</option>
+                            <option value="2ESOD">2º de ESO grupo D</option>
+                            <option value="3ESOA">3º de ESO grupo A</option>
+                            <option value="3ESOB">3º de ESO grupo B</option>
+                            <option value="3ESOC">3º de ESO grupo C</option>
+                            <option value="3ESOD">3º de ESO grupo D</option>
+                            <option value="4ESOA">4º de ESO grupo A</option>
+                            <option value="4ESOB">4º de ESO grupo B</option>
+                            <option value="4ESOC">4º de ESO grupo C</option>
+                            <option value="4ESOD">4º de ESO grupo D</option>
+                            <option value="1FPB">1º de FPB</option>
+                            <option value="2FPB">2º de FPB</option>
+                        </select>
+                    </div>
                 </div>
-              </div>
-              <button type="submit" class="btn btn-default col-xs-6 col-xs-offset-3">Enviar</button>
+                <button type="submit" class="btn btn-default col-xs-6 col-xs-offset-3">Enviar</button>
             </form>
-          </div>
-
-          <div class="col-xs-12" id="divRellenarInfo" style="display: none">
-            <h2>Recogida de informaci´on para tutores</h2>
-            <p>Explicaci´on</p>
-            <form>
-              <div class="form-group">
-                <label class="control-label" for="nombreAlumno">Nombre del alumno/a:</label>
-                <input required="required" type="text" class="form-control" id="nombreAlumno" readonly="readonly" >
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="faltasAsistencia">Faltas de asistencia:</label>
-                <select required="required" id="faltasAsistencia" name="faltasAsistencia">
-                  <option value="-">-</option>
-                  <option value="n">Ninguna</option>
-                  <option value="p">Pocas</option>
-                  <option value="b">Bastantes</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="actitud">Actitud:</label>
-                <select required="required" id="actitud" name="actitud">
-                  <option value="-">-</option>
-                  <option value="m">Muy buena</option>
-                  <option value="b">Buena</option>
-                  <option value="p">Pasiva</option>
-                  <option value="d">Distorsiona con frecuencia la clase</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="tareasClase">En clase, ¿realiza las tareas?:</label>
-                <select required="required" id="tareasClase" name="tareasClase">
-                  <option value="-">-</option>
-                  <option value="s">Siempre</option>
-                  <option value="c">Con regularidad</option>
-                  <option value="p">Pocas veces</option>
-                  <option value="n">Nunca</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="tareasCasa">En casa, ¿realiza las tareas?:</label>
-                <select required="required" id="tareasCasa" name="tareasCasa">
-                  <option value="-">-</option>
-                  <option value="s">Siempre</option>
-                  <option value="c">Con regularidad</option>
-                  <option value="p">Pocas veces</option>
-                  <option value="n">Nunca</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="traeMaterial">Trae el material:</label>
-                <select required="required" id="traeMaterial" name="traeMaterial">
-                  <option value="-">-</option>
-                  <option value="s">Siempre</option>
-                  <option value="c">Con regularidad</option>
-                  <option value="p">Pocas veces</option>
-                  <option value="n">Nunca</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="notas">Notas de pruebas realizadas:</label>
-                <input type="number" class="form-control" id="notas" name="notas">
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="observaciones">Observaciones:</label>
-                <textarea required="required" style="width:100%" id="observaciones" name="observaciones" placeholder="Material, relaciones, apoyo, necesidades, integraci´on en el grupo,..." ></textarea>
-              </div>
-              <button type="button" class="btn btn-default col-xs-6 col-xs-offset-3">Enviar</button>
-            </form>
-          </div>
-
         </div>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-          e.src='https://www.google-analytics.com/analytics.js';
-          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-          ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="/bower_components/jquery/dist/jquery.js"></script>
-        <script src="/bower_components/chosen/chosen.jquery.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
-
-        <!-- build:js scripts/plugins.js -->
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-        <script src="/bower_components/chosen/chosen.jquery.js"></script>
-        <!-- endbuild -->
-
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script>
-          function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
+        <div class="col-xs-12" id="divRellenarInfo" style="display: none">
+            <h2>Recogida de información para tutores</h2>
+            <p>Explicación</p>
+            <form>
+                <div class="form-group">
+                    <label class="control-label" for="nombreAlumno">Nombre del alumno/a:</label>
+                    <input required="required" type="text" class="form-control" id="nombreAlumno" readonly="readonly">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="faltasAsistencia">Faltas de asistencia:</label>
+                    <select required="required" id="faltasAsistencia" name="faltasAsistencia">
+                        <option value="-">-</option>
+                        <option value="n">Ninguna</option>
+                        <option value="p">Pocas</option>
+                        <option value="b">Bastantes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="actitud">Actitud:</label>
+                    <select required="required" id="actitud" name="actitud">
+                        <option value="-">-</option>
+                        <option value="m">Muy buena</option>
+                        <option value="b">Buena</option>
+                        <option value="p">Pasiva</option>
+                        <option value="d">Distorsiona con frecuencia la clase</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="tareasClase">En clase, ¿realiza las tareas?:</label>
+                    <select required="required" id="tareasClase" name="tareasClase">
+                        <option value="-">-</option>
+                        <option value="s">Siempre</option>
+                        <option value="c">Con regularidad</option>
+                        <option value="p">Pocas veces</option>
+                        <option value="n">Nunca</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="tareasCasa">En casa, ¿realiza las tareas?:</label>
+                    <select required="required" id="tareasCasa" name="tareasCasa">
+                        <option value="-">-</option>
+                        <option value="s">Siempre</option>
+                        <option value="c">Con regularidad</option>
+                        <option value="p">Pocas veces</option>
+                        <option value="n">Nunca</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="traeMaterial">Trae el material:</label>
+                    <select required="required" id="traeMaterial" name="traeMaterial">
+                        <option value="-">-</option>
+                        <option value="s">Siempre</option>
+                        <option value="c">Con regularidad</option>
+                        <option value="p">Pocas veces</option>
+                        <option value="n">Nunca</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="notas">Notas de pruebas realizadas:</label>
+                    <input type="number" class="form-control" id="notas" name="notas">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="observaciones">Observaciones:</label>
+                    <textarea required="required" style="width:100%" id="observaciones" name="observaciones" placeholder="Material, relaciones, apoyo, necesidades, integración en el grupo,..."></textarea>
+                </div>
+                <button type="button" class="btn btn-default col-xs-6 col-xs-offset-3">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/chosen/chosen.jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="/bower_components/chosen/chosen.jquery.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail());
-        // Mostrar bot´on desconectar
+        // Mostrar botón desconectar
         document.getElementById('btnLogOut').style.display = 'block';
         document.getElementById('btnLogIn').style.display = 'none';
         //Oculto capas de acciones        
@@ -232,11 +239,12 @@
         // Mostrar capa de opciones
         document.getElementById('divMenu').style.display = 'block';
 
-      }
-      function signOut() {
+    }
+
+    function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log('User signed out.');
+        auth2.signOut().then(function() {
+            console.log('User signed out.');
         });
         //Ocultar btn descoctar
         document.getElementById('btnLogOut').style.display = 'none';
@@ -245,70 +253,71 @@
         $('#divRellenarInfo').hide();
         $('#divPedirInfo').hide();
         $('#divMenu').hide();
-      }
+    }
 
-      function irHome(){
+    function irHome() {
 
-      }
+    }
 
-      $('#btnHome').click(function(){
+    $('#btnHome').click(function() {
         $('#divRellenarInfo').hide();
         $('#divPedirInfo').hide();
 
         $('#divMenu').show();
-      });
+    });
 
-      $('#btnPedirInfo').click(function(){
+    $('#btnPedirInfo').click(function() {
         $('#divMenu').hide();
         $('#divPedirInfo').show();
-      });
+    });
 
-      $('#btnRellenarInfo').click(function(){
+    $('#btnRellenarInfo').click(function() {
         $('#divMenu').hide();
         $('#divRellenarInfo').show();
-      });
+    });
 
-      $('#solicitados').chosen({
+    $('#solicitados').chosen({
         disable_search_threshold: 10,
-        no_results_text: "Opps, nada encontrado!",
-        width: "100%",
+        no_results_text: 'Opps, nada encontrado!',
+        width: '100%',
         allow_single_deselect: true
-      });
+    });
 
-      $('#faltasAsistencia').chosen({
+    $('#faltasAsistencia').chosen({
         disable_search_threshold: 10,
-        no_results_text: "Opps, nada encontrado!",
-        width: "100%",
+        no_results_text: 'Opps, nada encontrado!',
+        width: '100%',
         allow_single_deselect: true
-      });
+    });
 
-      $('#actitud').chosen({
+    $('#actitud').chosen({
         disable_search_threshold: 10,
-        no_results_text: "Opps, nada encontrado!",
-        width: "100%",
+        no_results_text: 'Opps, nada encontrado!',
+        width: '100%',
         allow_single_deselect: true
-      });
+    });
 
-      $('#tareasClase').chosen({
+    $('#tareasClase').chosen({
         disable_search_threshold: 10,
-        no_results_text: "Opps, nada encontrado!",
-        width: "100%",
+        no_results_text: 'Opps, nada encontrado!',
+        width: '100%',
         allow_single_deselect: true
-      });
+    });
 
-      $('#tareasCasa').chosen({
+    $('#tareasCasa').chosen({
         disable_search_threshold: 10,
-        no_results_text: "Opps, nada encontrado!",
-        width: "100%",
+        no_results_text: 'Opps, nada encontrado!',
+        width: '100%',
         allow_single_deselect: true
-      });
+    });
 
-      $('#traeMaterial').chosen({
+    $('#traeMaterial').chosen({
         disable_search_threshold: 10,
-        no_results_text: "Opps, nada encontrado!",
-        width: "100%",
+        no_results_text: 'Opps, nada encontrado!',
+        width: '100%',
         allow_single_deselect: true
-      });
+    });
     </script>
-  </body>
-  </html>
+</body>
+
+</html>
